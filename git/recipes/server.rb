@@ -25,4 +25,6 @@ directory "/srv/git" do
   mode 0755
 end
 
-runit_service "git-daemon"
+runit_service "git-daemon" do
+  options :server_arguments => node[:git][:server_arguments]
+end

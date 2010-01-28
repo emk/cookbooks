@@ -13,3 +13,14 @@ end
 %w{ apache2 runit }.each do |cb|
   depends cb
 end
+
+attribute "git",
+  :display_name => "Git",
+  :description => "Hash of git attributes",
+  :type => "hash"
+
+attribute "git/server_arguments",
+  :display_name => "Server arguments",
+  :description => "Arguments to pass to 'git daemon'",
+  :default => "--export-all"
+
